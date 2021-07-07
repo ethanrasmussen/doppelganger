@@ -25,8 +25,8 @@ class Doppelganger:
         self.websocket.disconnect()
     def switch_manual(self):
         SAMPLERATE, ALERT = read("alarm.wav")
-        with wave.open("alarm.wav", 'rb') as fartlol:
-            SAMPLERATE = fartlol.getframerate()
+        with wave.open("alarm.wav", 'rb') as ALARM:
+            SAMPLERATE = ALARM.getframerate()
         sc.all_speakers()[0].play(numpy.array(ALERT) / numpy.max(ALERT), samplerate=SAMPLERATE)
 
 
